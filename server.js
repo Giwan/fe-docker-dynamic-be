@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/backendapiroute", (req, res) => {
-  res.json({ apiHost: "https://mybackendendroute.com" });
+  res.json({ apiHost: process.env.API_HOST });
 });
 
 /**
