@@ -8,6 +8,10 @@ const { PORT = 3000 } = process.env;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get("/backendapiroute", (req, res) => {
+  res.json({ apiHost: "https://mybackendendroute.com" });
+});
+
 /**
  * ensure build folder is served on root request
  */

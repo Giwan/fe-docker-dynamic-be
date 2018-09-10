@@ -1,8 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
+  componentDidMount() {
+    // fetch backend endpoint
+    fetch("/backendapiroute")
+      .then(rsp => rsp.json())
+      .then(rsp => {
+        window.apiHost = rsp.apiHost;
+      })
+      .catch(e =>
+        console.error(
+          "something went wrong while trying to get the api host",
+          e
+        )
+      );
+  }
   render() {
     return (
       <div className="App">
