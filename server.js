@@ -8,8 +8,8 @@ const { PORT = 3000 } = process.env;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/backendapiroute", (req, res) => {
-  res.json({ apiHost: process.env.API_HOST });
+app.get("/backendapiroute", ({}, response) => {
+  response.json({ apiHost: process.env.API_HOST });
 });
 
 /**
@@ -30,5 +30,4 @@ app.use(express.static(path.resolve(__dirname, "build")));
 app.use("^(?!api)", express.static("build"));
 
 // start the server
-app.listen(PORT);
-console.log(`running on http://localhost:${PORT}`);
+app.listen(PORT, () => console.log(`running on http://localhost:${PORT}`));
