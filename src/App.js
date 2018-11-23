@@ -16,7 +16,7 @@ class App extends Component {
    * (no need to pollute the global object if we don't need to)
    */
   componentDidMount() {
-    fetch("/backendapiroute")
+    fetch("/env.json")
       .then(rsp => rsp.json())
       .then(rsp => {
         window.apiHost = rsp.apiHost;

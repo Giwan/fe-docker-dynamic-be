@@ -24,3 +24,5 @@ Loading the apiHost using componentDidMount means that react app itself is not b
 ### Can the api host be added using server side rendering
 
 With server side rendering, the react front-end is rendered on the server on the initial GET request. During that step it would be possible to embed the apiHost along with any other data needed on the initial render.
+
+There is already an express server, that is serving the application. It however, does not yet render it, it simply sends the static assets. If it did the initial render on the server, it could embed the apiHost into the application and send that to the server.

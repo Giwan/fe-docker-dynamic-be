@@ -8,7 +8,7 @@ const { PORT = 3000 } = process.env;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/backendapiroute", ({}, response) => {
+app.get("/env.json", ({}, response) => {
   response.json({ apiHost: process.env.API_HOST });
 });
 
