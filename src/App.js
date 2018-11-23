@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      apiHost: null
+    };
+  }
   /**
    * Once the App is mounted, the API_HOST is fetched.
    * All /api request can now be directed to that host.
@@ -14,6 +20,7 @@ class App extends Component {
       .then(rsp => rsp.json())
       .then(rsp => {
         window.apiHost = rsp.apiHost;
+        this.setState({ apiHost: rsp.apiHost });
       })
       .catch(e => console.error("failed to get the api host", e));
   }
@@ -21,6 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sample app testing dynamic backend</h1>
+        <div>Loaded backend host: {this.state.apiHost} </div>
       </div>
     );
   }
