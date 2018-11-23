@@ -20,3 +20,7 @@ There are several ways of addressing this. Perform the initial request first and
 ### Load apiHost using componentDidMount
 
 Loading the apiHost using componentDidMount means that react app itself is not blocked until this request is complete. However the apiHost now needs to be added to a global variable so that it can be accessed from everywhere. While it works, it does introduce an artificial delay into the application.
+
+### Can the api host be added using server side rendering
+
+With server side rendering, the react front-end is rendered on the server on the initial GET request. During that step it would be possible to embed the apiHost along with any other data needed on the initial render.
