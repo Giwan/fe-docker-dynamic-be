@@ -21,7 +21,7 @@ const serverRenderer = () => async ({}, response) => {
         }
 
         // Render the entire React app to HTML string
-        const renderedHTML = renderToString(<App />);
+        const renderedHTML = renderToString(<App apiHost={API_HOST} />);
 
         // Add (Global) variable with data to
         // the client window object
@@ -34,14 +34,10 @@ const serverRenderer = () => async ({}, response) => {
         return response.send(
             indexHTMLFile.replace(
                 '<div id="root"></div>',
-                `<div id="root">${renderedHTML}</div>`
+                `<div id="root">${renderedHTML}</div>${initialData}`
             )
         );
     });
 };
 
 module.exports = serverRenderer;
-
-/**
- *
- */

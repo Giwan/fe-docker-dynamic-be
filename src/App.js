@@ -24,10 +24,11 @@ class App extends Component {
     //     .catch(e => console.error("failed to get the api host", e));
     // }
     render() {
+        const apiHost = this.props.apiHost || window.__API_HOST__;
         return (
             <div className="App">
                 <h1>Sample app testing dynamic backend</h1>
-                <div>Loaded backend host: {this.props.apiHost} </div>
+                <div>Loaded backend host: {apiHost} </div>
             </div>
         );
     }
