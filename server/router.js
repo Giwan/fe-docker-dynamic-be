@@ -15,7 +15,7 @@ router.use("^/$", serverRenderer());
 
 // Static resources should just be served as they are
 router.use(
-    express.static(path.resolve(__dirname, "..", "..", "build"), {
+    express.static(path.resolve(__dirname, "..", "build"), {
         maxAge: "30d"
     })
 );
