@@ -3,20 +3,21 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@babel/polyfill": "^7.0.0",
-        "@babel/preset-env": "^7.0.0",
-        "body-parser": "^1.18.3",
-        "express": "^4.16.4",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "babel-plugin-dynamic-import-node": "^2.2.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react-app": "^3.1.2",
+        "express": "^4.16.3",
         "file-loader": "^2.0.0",
         "ignore-styles": "^5.0.1",
-        "nodemon": "^1.18.6",
-        "react": "^16.6.3",
-        "react-dom": "^16.6.3",
-        "react-scripts": "^2.1.1",
-        "url-loader": "^1.1.2"
+        "react": "^16.4.2",
+        "react-dom": "^16.4.2",
+        "react-router-dom": "^4.3.1",
+        "react-scripts": "^1.1.5",
+        "url-loader": "^1.1.1"
     },
     "scripts": {
-        "start": "API_HOST=https://somehost.com node ./server/bootstrap.js",
+        "start": "API_HOST=https://somehost.com NODE_ENV=development nodemon ./server/bootstrap.js",
         "start:prod": "NODE_ENV=production node ./server/bootstrap.js",
         "start-dev": "react-scripts start",
         "build": "react-scripts build",
@@ -30,11 +31,6 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "@babel/core": "^7.1.6",
-        "@babel/plugin-proposal-export-default-from": "^7.0.0",
-        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-        "@babel/preset-react": "^7.0.0",
-        "@babel/register": "^7.0.0",
-        "babel-plugin-dynamic-import-node": "^2.2.0"
+        "nodemon": "^1.18.6"
     }
 }

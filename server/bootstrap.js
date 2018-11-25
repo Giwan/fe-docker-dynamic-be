@@ -6,13 +6,9 @@
 require("ignore-styles");
 require("url-loader");
 require("file-loader");
-require("@babel/polyfill");
-require("@babel/register")({
-    presets: ["@babel/preset-env", "@babel/preset-react"],
-    plugins: [
-        "@babel/plugin-syntax-dynamic-import",
-        "@babel/plugin-proposal-export-default-from"
-    ]
+require("babel-register")({
+    presets: ["babel-preset-es2015", "babel-preset-react-app"],
+    plugins: ["syntax-dynamic-import", "dynamic-import-node"]
 });
 
 require("./server");
