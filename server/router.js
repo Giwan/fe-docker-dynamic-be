@@ -9,11 +9,23 @@ const serverRenderer = require("./serverRenderer");
  */
 const router = express.Router();
 
+/**
+ * this route will not be used with serverside rendering
+ * working properly.
+ * However getting this route will require an additional
+ * request to be sent to the server.
+ */
+router.get("/environment.json", ({}, response) => {
+    response.json({
+        apiHost: "http://somehost.com"
+    });
+});
+
 // root (/) should always serve our server rendered page
 // serverRenderer will be disussed in the next section.
 router.use("^/$", serverRenderer());
 
-// Static resources should just be served as they are
+// Static assests should just be accessible
 router.use(
     express.static(path.resolve(__dirname, "..", "build"), {
         maxAge: "30d"
