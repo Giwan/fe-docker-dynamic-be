@@ -1,27 +1,40 @@
 {
-  "name": "noproxy",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "nodemon": "^1.18.6",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "react-scripts": "^2.1.1"
-  },
-  "scripts": {
-    "start": "API_HOST=https://somehost.com nodemon server.js",
-    "start:prod": "node server.js",
-    "start-dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "name": "noproxy",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "file-loader": "^2.0.0",
+        "ignore-styles": "^5.0.1",
+        "nodemon": "^1.18.6",
+        "react": "^16.6.3",
+        "react-dom": "^16.6.3",
+        "react-scripts": "^2.1.1",
+        "url-loader": "^1.1.2"
+    },
+    "scripts": {
+        "start": "API_HOST=https://somehost.com node ./server/bootstrap.js",
+        "start:prod": "NODE_ENV=production node ./server/bootstrap.js",
+        "start-dev": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.1.6",
+        "@babel/plugin-proposal-export-default-from": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/register": "^7.0.0",
+        "babel-plugin-dynamic-import-node": "^2.2.0"
+    }
 }
