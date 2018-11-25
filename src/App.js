@@ -1,28 +1,12 @@
 import React, { Component } from "react";
 
 class App extends Component {
-    // constructor(props) {
-    //   super(props);
-    //   this.state = {
-    //     apiHost: null
-    //   };
-    // }
     /**
-     * Once the App is mounted, the API_HOST is fetched.
-     * All /api request can now be directed to that host.
-     * In this example it's stored on the window object
-     * but it might even be cleaner to store this in Redux.
-     * (no need to pollute the global object if we don't need to)
+     * When this app component is rendered on the server, it's provided with the
+     * api host immediately.
+     * If the app has to be re-rendered on the client for any reason,
+     * then the apiHost can be retrieved from the window object.
      */
-    // componentDidMount() {
-    //   fetch("/env.json")
-    //     .then(rsp => rsp.json())
-    //     .then(rsp => {
-    //       window.apiHost = rsp.apiHost;
-    //       this.setState({ apiHost: rsp.apiHost });
-    //     })
-    //     .catch(e => console.error("failed to get the api host", e));
-    // }
     render() {
         const apiHost = this.props.apiHost || window.__API_HOST__;
         return (
